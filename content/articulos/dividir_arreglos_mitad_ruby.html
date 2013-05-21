@@ -1,0 +1,20 @@
+---
+kind: article
+title: Dividir arreglos a la mitad en Ruby.
+created_at: 01/04/2013 19:30:30
+tags: ['ruby']
+---
+
+Necesitaba dividir un arreglo a la mitad para dividir una lista en dos columnas dinámicamente, por suerte Ruby tiene el <a href="http://ruby-doc.org/core/classes/Enumerable.html#M003130">Metodo "Partition"</a>
+
+    i = 0
+    count = User.count
+    group_one, group_two = User.all.partition { i += 1; i < count / 2 }
+
+
+Este método chequea cada objeto, y si el bloque resulta verdadero es movido al primer array.
+
+En el ejemplo:
+
+Primero iniciamos una Variable para utilizar como contador.
+Count cuenta las entradas en el Array User, y finalmente se declaran dos Variables con Partition, suma 1 a i por cada Usuario, y si al dividir la cantidad total de Usuarios en 2, el resultado es menor a i, este Usuario formara parte de group_one.

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>G. Galizzi - <%= @item[:title] %></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="http://guillegalizzi.com.ar/javascript/google-code-prettify/prettifysheet.css">
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>"> 
+
+  </head>
+  <body>
+    <div id="container">
+    <!-- <div id="aboutbar">
+        <h1>G.Galizzi</h1>
+        <p>Mis notas, referencias y cualquier otra cosa sobre Diseño, Desarrollo web y otros intereses.</p>
+    </div> -->
+    <div id="sidebar">
+        <h1><%= link_to( '.G. Galizzi', 'http://www.guillegalizzi.com.ar') %></h1>
+        <p id="intro">Blog de Diseño y Programación</p>
+      <h2>Navegación</h2>
+      <ul id="nav">
+          <li>
+          <%= link_to( 'Home', 'http://www.guillegalizzi.com.ar' ) %>
+          </li>
+          <li>
+            UNL
+          </li>
+        </ul>
+
+    </div>
+    <div id="main">
+      <% if @item[:kind] == 'article' %>
+      <h2><%= @item[:title] %></h2> 
+      <% end %>
+      <%= yield %>
+    </div>
+    </div>
+
+    <!-- <div id="footer">
+        www.guillegalizzi.com.ar | www.ggalizzi.com.ar &copy; 2013 | <a href="mailto:contacto@guillegalizzi.com.ar">Contacto</a>
+    </div> -->
+
+    <script src="http://guillegalizzi.com.ar/javascript/jquery-1.9.1.min.js">
+    </script>
+    <script src="http://guillegalizzi.com.ar/javascript/google-code-prettify/prettify.js">
+    </script>
+    <script src="http://guillegalizzi.com.ar/javascript/application.js">
+    </script>
+    <script type="text/javascript">
+        $(function() {
+                $('pre').addClass('prettyprint');
+                prettyPrint();
+                });
+    </script>
+  </body>
+</html>

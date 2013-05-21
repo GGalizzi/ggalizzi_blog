@@ -1,0 +1,22 @@
+---
+title: Home
+---
+
+<% articles = @site.sorted_articles %>
+<% current = 0 %>
+<% articles[0..7].each do |article| %>
+<% if not article[:tags].include?("unl") %>
+    <div class= 'snippet <%= 'even' if current.odd? %> '>
+        <h2><%= link_to( article[:title], article.path) %></h2>
+        <div class="fecha"><%= article[:day] +' de ' + article[:month] + ' del ' + article[:year] %></div>
+        <%= article.snippet %>
+        <div class="more">
+            <%= link_to( 'Seguir leyendo', article.path) %>
+        </div>
+        <div class="tags">
+            Tags: <%= tags_for( article, params = { :base_url => "/tags/" } ) %>
+        </div>
+    </div>
+    <% current += 1 %>
+<% end %>
+<% end %>

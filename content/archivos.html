@@ -1,0 +1,14 @@
+<ul>
+    <% year_set.each do |year| %>
+    <li>
+      <%= year %>
+      <ul>
+          <% month_set.each do |month| %>
+          <% if year == month.split('/').last %>
+          <li><%= link_to(int_to_month(month.split('/').first), '/archivos/' + month + '/') %></li>
+          <% end %>
+          <% end %>
+      </ul>
+  </li>
+  <% end %>
+</ul>

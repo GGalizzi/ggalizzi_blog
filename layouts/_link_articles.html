@@ -1,0 +1,11 @@
+<ul>
+    <% list.sort!{ |a,b| a[:created_at] <=> b[:created_at] }.reverse! %>
+<% list.each do |article| %>
+    <li>
+        <%= link_to(article[:title], route_path(article)) %>
+        <% if article[:tags].include?("unl") %>
+            <span> | <%= article[:description] %></span>
+        <% end %>
+    </li>
+<% end %>
+</ul>

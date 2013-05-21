@@ -1,0 +1,9 @@
+<% articles = items_with_tag(tag).reverse %>
+
+<% if tag != "unl" %>
+    <h3>Resultados para el tag '<%= tag %>':</h3>
+    <%= render('_link_articles', :list => articles) %>
+<% else %>
+    <h3>Articulos UNL</h3>
+    <%= render('_link_articles', :list => articles) %>
+<% end %>

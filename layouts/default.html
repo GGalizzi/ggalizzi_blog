@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>G. Galizzi - <%= @item[:title] %></title>
+    <meta name="description" content="Un blog sobre diseño grafico, diseño web, desarrollo web, y todo lo relacionado.">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/javascript/google-code-prettify/prettifysheet.css">
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>"> 
+
+  </head>
+  <body>
+    <div id="container">
+    <!-- <div id="aboutbar">
+        <h1>G.Galizzi</h1>
+        <p>Mis notas, referencias y cualquier otra cosa sobre Diseño, Desarrollo web y otros intereses.</p>
+    </div> -->
+    <div id="main_nav">
+        <strong>Navegación</strong>
+        <ul>
+            <li><%= link_to('Home', '/') %></li>
+            <li><%= link_to('UNL', '/tags/unl/') %></li>
+            <li>About</li>
+        </ul>
+    </div>
+    <div id="sidebar">
+        <h1><%= link_to( '.G. Galizzi', '/') %></h1>
+        <p id="intro">Blog de Diseño y Programación</p>
+      <h2>Últimos artículos</h2>
+      <ul id="sorted_articles">
+        <% (@site.sorted_articles[0..4]).each do |post| %>
+
+        <% if not post[:tags].include?("unl") %>
+        <li>
+                <% if @item.identifier != post.path %>
+                    <%= link_to(post[:title], post.path) %>
+                <% else %>
+                    <%= post[:title] %>
+                <% end%>
+        </li>
+        <%end%>
+        <% end %>
+      </ul>
+      <h2>Archivos</h2>
+      <ul id="archivos">
+          <% year_set[0..1].each do |year| %>
+          <li>
+              <%= year %>
+              <ul>
+                  <% month_set.each do |month| %>
+                  <% if year == month.split('/').last %>
+                  <li>
+                  <% if @item.identifier != '/archivos/' + month + '/' %>
+                  <%= link_to(int_to_month(month.split('/').first),
+                  '/archivos/' + month + '/') %>
+                  <% else %>
+                  <%= int_to_month(month.split('/').first) %>
+                  <% end %>
+                  </li>
+                  <% end %>
+                  <% end %>
+              </ul>
+          </li>
+          <% end %>
+          <li>
+              <% if @item.identifier != '/archivos/' %>
+              <%= link_to( '&raquo;Todos', '/archivos/') %>
+              <% else %>
+              &raquo;Todos
+              <% end %>
+          </li>
+      </ul>
+    </div>
+    <div id="main">
+      <% if @item[:kind] == 'article' %>
+      <h2><%= @item[:title] %></h2> 
+      <% end %>
+      <%= yield %>
+    </div>
+    </div>
+
+    <!-- <div id="footer">
+        www.guillegalizzi.com.ar | www.ggalizzi.com.ar &copy; 2013 | <a href="mailto:contacto@guillegalizzi.com.ar">Contacto</a>
+    </div> -->
+
+    <script src="/javascript/jquery-1.9.1.min.js">
+    </script>
+    <script src="/javascript/google-code-prettify/prettify.js">
+    </script>
+    <script src="/javascript/application.js">
+    </script>
+    <script type="text/javascript">
+        $(function() {
+                $('pre').addClass('prettyprint');
+                prettyPrint();
+                });
+    </script>
+  </body>
+</html>

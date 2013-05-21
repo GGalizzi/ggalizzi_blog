@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>G. Galizzi - <%= @item[:title] %></title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+
+    <body>
+        <div id="main">
+            ASDLKJAKLSDJKL
+            <%= yield %>
+        </div>
+        <div id="sidebar">
+            <h2>Ultimos articulos</h2>
+            <ul>
+                <% (@site.sorted_articles[0..6]).each do |post| %>
+                    <li><%= link_to(post[:title], post.path) %></li>
+                <% end %>
+            </ul>
+        </div>
+    </body>
+</html>

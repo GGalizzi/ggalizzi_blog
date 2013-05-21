@@ -1,0 +1,26 @@
+
+[1mFrom:[0m /home/guillermo/web_dev/nanoc/ggalizzi_blog/lib/helpers.rb @ line 83 Object#add_class:
+
+     [1;34m79[0m: [1;31mdef[0m [1;34madd_class[0m
+     [1;34m80[0m: 
+     [1;34m81[0m: 
+     [1;34m82[0m: 
+ =>  [1;34m83[0m:     binding.pry
+     [1;34m84[0m: [0;34m=begin[0m
+     [1;34m85[0m:     articles = sorted_articles
+     [1;34m86[0m: 
+     [1;34m87[0m:     articles.each [1;31mdo[0m |article|
+     [1;34m88[0m:         split_content = article.raw_content.split([32m[1;32m"[0m[32m^[1;32m"[0m[32m[0m)
+     [1;34m89[0m:         [1;31mfor[0m i [1;31min[0m split_content.length.times
+     [1;34m90[0m:             [1;31mif[0m i.odd?
+     [1;34m91[0m:                 split_content[i] = [32m[1;32m"[0m[32m<class=[1;36m\"[0m[32mcodlet[1;36m\"[0m[32m>[1;32m"[0m[32m[0m+split_content[i]+[32m[1;32m"[0m[32m</class>[1;32m"[0m[32m[0m
+     [1;34m92[0m:             [1;31mend[0m
+     [1;34m93[0m:         [1;31mend[0m
+     [1;34m94[0m: 
+     [1;34m95[0m:         article.raw_content = split_content.join
+     [1;34m96[0m: 
+     [1;34m97[0m:         binding.pry
+     [1;34m98[0m:     [1;31mend[0m
+     [1;34m99[0m: =[1;31mend[0m
+    [1;34m100[0m: [1;31mend[0m
+
