@@ -10,14 +10,14 @@ html {
 }
 
 body {
-    font-size: 12px;
+    font-size: 13px;
     color: #101010;
     background: #FEFEFF;
     height: 100%;
     width: 100%;
-    line-height:2em;
+    line-height:2.1em;
 
-  font-family: sans-serif;
+    font-family:'Merriweather Sans', sans-serif;
 }
 
 p {
@@ -35,7 +35,7 @@ h1 {
     font-size: 2.2em;
     /* text-transform: uppercase; */
     color: #A83966;
-    line-height: 1em;
+    line-height: 1.5em;
     letter-spacing: 0.05em;
     padding: 0.5em 0;
 }
@@ -161,6 +161,14 @@ strong em {
     position:fixed;
     right:85%;
     top:5%;
+}
+
+@media all and (max-width: 500px) {
+    #main_nav {
+    position:absolute;
+    top: 1%;
+    left:8%;
+    }
 }
 
 #main_nav strong {
