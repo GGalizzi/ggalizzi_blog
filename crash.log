@@ -1,8 +1,8 @@
-Crashlog created at 2013-05-20 12:08:36 -0300
+Crashlog created at 2013-05-25 12:46:43 -0300
 
 ===== MESSAGE:
 
-NoMethodError: undefined method `[]' for nil:NilClass
+RuntimeError: Could not parse YAML for content/articulos/unl/practicando_variables_metodos.md: (<unknown>): mapping values are not allowed in this context at line 3 column 19
 
 ===== COMPILATION STACK:
 
@@ -10,135 +10,109 @@ NoMethodError: undefined method `[]' for nil:NilClass
 
 ===== STACK TRACE:
 
-  0. layout /default/:5:in `get_binding'
-  1. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/2.0.0/erb.rb:846:in `eval'
-  2. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/2.0.0/erb.rb:846:in `result'
-  3. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/filters/erb.rb:34:in `run'
-  4. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/base/compilation/filter.rb:122:in `setup_and_run'
-  5. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/helpers/rendering.rb:120:in `render'
-  6. layout /_tag_page/:8:in `get_binding'
-  7. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/2.0.0/erb.rb:846:in `eval'
-  8. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/2.0.0/erb.rb:846:in `result'
-  9. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/filters/erb.rb:34:in `run'
-  10. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/base/compilation/filter.rb:122:in `setup_and_run'
-  11. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/helpers/rendering.rb:120:in `render'
-  12. lib/helpers.rb:64:in `block in create_tag_pages'
-  13. lib/helpers.rb:62:in `each'
-  14. lib/helpers.rb:62:in `create_tag_pages'
-  15. ./Rules:4:in `block in load'
-  16. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/base/compilation/compiler.rb:197:in `instance_eval'
-  17. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/base/compilation/compiler.rb:197:in `preprocess'
-  18. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/base/compilation/compiler.rb:120:in `load'
-  19. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/base/source_data/site.rb:250:in `load'
-  20. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/command_runner.rb:63:in `load_site'
-  21. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/commands/compile.rb:319:in `run'
-  22. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/command_runner.rb:14:in `block in call'
-  23. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
-  24. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  25. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/command_runner.rb:13:in `call'
-  26. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command_dsl.rb:185:in `block in runner'
-  27. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
-  28. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
-  29. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
-  30. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/commands/nanoc.rb:39:in `block in define'
-  31. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
-  32. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
-  33. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
-  34. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli.rb:52:in `block in run'
-  35. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
-  36. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  37. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib/nanoc/cli.rb:50:in `run'
-  38. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/bin/nanoc:19:in `<top (required)>'
-  39. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/bin/nanoc:23:in `load'
-  40. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/bin/nanoc:23:in `<main>'
-  41. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/bin/ruby_noexec_wrapper:14:in `eval'
-  ... 44 more lines omitted. See full crash log for details.
+  0. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/data_sources/filesystem.rb:266:in `rescue in parse'
+  1. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/data_sources/filesystem.rb:263:in `parse'
+  2. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/data_sources/filesystem.rb:89:in `block in load_objects'
+  3. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/data_sources/filesystem.rb:78:in `each'
+  4. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/data_sources/filesystem.rb:78:in `map'
+  5. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/data_sources/filesystem.rb:78:in `load_objects'
+  6. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/data_sources/filesystem.rb:37:in `items'
+  7. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:325:in `block in load_items'
+  8. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:324:in `each'
+  9. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:324:in `load_items'
+  10. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:243:in `load'
+  11. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:127:in `layouts'
+  12. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/compilation/compiler.rb:186:in `dependency_tracker'
+  13. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/memoization.rb:56:in `block in memoize'
+  14. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/compilation/compiler.rb:455:in `stores'
+  15. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/compilation/compiler.rb:145:in `unload'
+  16. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:274:in `unload'
+  17. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:254:in `rescue in load'
+  18. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:258:in `load'
+  19. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:63:in `load_site'
+  20. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/commands/compile.rb:358:in `run'
+  21. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:14:in `block in call'
+  22. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
+  23. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  24. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:13:in `call'
+  25. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command_dsl.rb:185:in `block in runner'
+  26. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
+  27. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
+  28. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
+  29. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/commands/nanoc.rb:39:in `block in define'
+  30. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
+  31. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
+  32. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
+  33. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli.rb:52:in `block in run'
+  34. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
+  35. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  36. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib/nanoc/cli.rb:50:in `run'
+  37. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/bin/nanoc:19:in `<top (required)>'
+  38. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/bin/nanoc:23:in `load'
+  39. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/bin/nanoc:23:in `<main>'
+  40. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/bin/ruby_noexec_wrapper:14:in `eval'
+  ... 43 more lines omitted. See full crash log for details.
 
 ===== VERSION INFORMATION:
 
-nanoc 3.6.2 © 2007-2013 Denis Defreyne.
+nanoc 3.6.3 © 2007-2013 Denis Defreyne.
 Running ruby 2.0.0 (2013-01-07) on i686-linux with RubyGems 2.0.0.
 
 ===== SYSTEM INFORMATION:
 
-Linux archbang 3.9.2-1-ARCH #1 SMP PREEMPT Sat May 11 21:11:14 CEST 2013 i686 GNU/Linux
+Linux archbang 3.9.3-1-ARCH #1 SMP PREEMPT Mon May 20 08:00:01 CEST 2013 i686 GNU/Linux
 
 ===== INSTALLED GEMS:
 
   adsf 1.1.1
-  bigdecimal 1.1.0
-  blankslate 2.1.2.4
-  builder 3.2.0
   bundler 1.3.4
   coderay 1.0.9
+  coffee-script 2.2.0
+  coffee-script-source 1.6.2
   colored 1.2
-  colorize 0.5.8
   cri 2.3.0
-  csscss 1.0.0
-  cucumber 1.3.1
-  diff-lcs 1.2.4
-  ffi 1.6.0
-  gherkin 2.12.0
-  hpricot 0.8.6
-  io-console 0.3
-  json 1.7.5, 1.8.0
-  kramdown 1.0.1
-  listen 0.7.3
+  execjs 1.4.0
+  json 1.8.0
+  kramdown 1.0.2
   method_source 0.8.1
-  mime-types 1.22
-  minitest 4.3.2
   multi_json 1.7.3
-  nanoc 3.6.2
-  parslet 1.5.0
+  nanoc 3.6.3
   pry 0.9.12.2
-  psych 2.0.0
   rack 1.5.2
-  rake 0.9.6, 10.0.4
-  rb-inotify 0.9.0
-  rdoc 4.0.0.preview3.1
-  rspec 2.13.0
-  rspec-core 2.13.1
-  rspec-expectations 2.13.0
-  rspec-mocks 2.13.1
-  rubygems-bundler 1.1.1
-  rvm 1.11.3.6
   slop 3.4.5
-  test-unit 2.0.0.0
 
 ===== ENVIRONMENT:
 
 BROWSER => "firefox"
-COLUMNS => "159"
-DBUS_SESSION_BUS_ADDRESS => "unix:abstract=/tmp/dbus-o2iT5MgybP,guid=396f80154a4218ce3d4db73d51995c20"
+BUNDLE_BIN_PATH => "/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global/gems/bundler-1.3.4/bin/bundle"
+BUNDLE_GEMFILE => "/home/guillermo/web_dev/nanoc/ggalizzi_blog/Gemfile"
+DBUS_SESSION_BUS_ADDRESS => "unix:abstract=/tmp/dbus-nh0fhSa54j,guid=8e7a6c2e72231ca2208f35a451a0b685"
 DE => "openbox"
 DISPLAY => ":0.0"
 EDITOR => "gvim"
 GEM_HOME => "/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc"
 GEM_PATH => "/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc:/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global"
-GNOME_KEYRING_CONTROL => "/run/user/1000/keyring-cxgp5w"
-GNOME_KEYRING_PID => "294"
+GNOME_KEYRING_CONTROL => "/run/user/1000/keyring-h2qkBj"
+GNOME_KEYRING_PID => "288"
 HOME => "/home/guillermo"
 IRBRC => "/home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/.irbrc"
 JAVA_HOME => "/usr/lib/jvm/java-7-openjdk"
 LANG => "en_US.UTF-8"
 LC_COLLATE => "C"
-LINES => "72"
 LOGNAME => "guillermo"
 MAIL => "/var/mail/guillermo"
+MANPATH => "/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/kramdown-1.0.2/man"
 MOZ_PLUGIN_PATH => "/usr/lib/mozilla/plugins"
-MYGVIMRC => "/home/guillermo/.gvimrc"
-MYVIMRC => "/home/guillermo/.vimrc"
 MY_RUBY_HOME => "/home/guillermo/.rvm/rubies/ruby-2.0.0-rc1"
+OLDPWD => "/home/guillermo"
 PATH => "/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/bin:/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global/bin:/home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/bin:/home/guillermo/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl"
 PWD => "/home/guillermo/web_dev/nanoc/ggalizzi_blog"
-ROWS => "72"
+RUBYOPT => "-I/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global/gems/bundler-1.3.4/lib -rbundler/setup"
 RUBY_VERSION => "ruby-2.0.0-rc1"
 SHELL => "/bin/bash"
-SHLVL => "2"
-TERM => "dumb"
+SHLVL => "1"
+TERM => "xterm-256color"
 USER => "guillermo"
-VIM => "/usr/share/vim"
-VIMRUNTIME => "/usr/share/vim/vim73"
 XAUTHORITY => "/home/guillermo/.Xauthority"
 XDG_RUNTIME_DIR => "/run/user/1000"
 XDG_SEAT => "seat0"
@@ -146,41 +120,79 @@ XDG_SESSION_ID => "1"
 XDG_VTNR => "7"
 _ => "/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/bin/nanoc"
 _ORIGINAL_GEM_PATH => "/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc:/home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global"
-__array_start => "0"
-_first => "0"
-_second => "1"
-escape_flag => "1"
 rvm_bin_path => "/home/guillermo/.rvm/bin"
-rvm_debug_clr => "\e[35m"
 rvm_delete_flag => "0"
-rvm_error_clr => "\e[31m"
-rvm_notify_clr => "\e[32m"
 rvm_path => "/home/guillermo/.rvm"
 rvm_prefix => "/home/guillermo"
-rvm_reset_clr => "\e(B\e[m"
 rvm_ruby_string => "ruby-2.0.0-rc1"
 rvm_sticky_flag => "1"
-rvm_use_flag => "1"
-rvm_version => "1.18.5 (master)"
-rvm_warn_clr => "\e[33m"
+rvm_version => "1.20.11 (stable)"
+
+===== GEMFILE.LOCK:
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    adsf (1.1.1)
+      rack (>= 1.0.0)
+    coderay (1.0.9)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.2)
+    colored (1.2)
+    cri (2.3.0)
+      colored (>= 1.2)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+    json (1.8.0)
+    kramdown (1.0.2)
+    method_source (0.8.1)
+    multi_json (1.7.3)
+    nanoc (3.6.3)
+      cri (~> 2.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rack (1.5.2)
+    slop (3.4.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  adsf
+  coffee-script
+  json
+  kramdown
+  nanoc
+  pry
 
 ===== LOAD PATHS:
 
-  0. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib
-  1. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global/gems/rubygems-bundler-1.1.1/lib
-  2. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global/gems/bundler-1.3.4/lib
-  3. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/colored-1.2/lib
-  4. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib
-  5. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.2/lib
-  6. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/coderay-1.0.9/lib
-  7. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/slop-3.4.5/lib
-  8. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/method_source-0.8.1/lib
-  9. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/pry-0.9.12.2/lib
-  10. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/site_ruby/2.0.0
-  11. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/site_ruby/2.0.0/i686-linux
-  12. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/site_ruby
-  13. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/vendor_ruby/2.0.0
-  14. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/vendor_ruby/2.0.0/i686-linux
-  15. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/vendor_ruby
-  16. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/2.0.0
-  17. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/2.0.0/i686-linux
+  0. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib
+  1. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/pry-0.9.12.2/lib
+  2. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/slop-3.4.5/lib
+  3. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/nanoc-3.6.3/lib
+  4. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/method_source-0.8.1/lib
+  5. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/kramdown-1.0.2/lib
+  6. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global/gems/json-1.8.0/lib
+  7. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/cri-2.3.0/lib
+  8. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/colored-1.2/lib
+  9. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/coffee-script-2.2.0/lib
+  10. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/execjs-1.4.0/lib
+  11. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global/gems/multi_json-1.7.3/lib
+  12. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/coffee-script-source-1.6.2/lib
+  13. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/coderay-1.0.9/lib
+  14. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/adsf-1.1.1/lib
+  15. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@nanoc/gems/rack-1.5.2/lib
+  16. /home/guillermo/.rvm/gems/ruby-2.0.0-rc1@global/gems/bundler-1.3.4/lib
+  17. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/site_ruby/2.0.0
+  18. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/site_ruby/2.0.0/i686-linux
+  19. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/site_ruby
+  20. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/vendor_ruby/2.0.0
+  21. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/vendor_ruby/2.0.0/i686-linux
+  22. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/vendor_ruby
+  23. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/2.0.0
+  24. /home/guillermo/.rvm/rubies/ruby-2.0.0-rc1/lib/ruby/2.0.0/i686-linux

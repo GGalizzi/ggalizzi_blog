@@ -10,7 +10,7 @@ Este es el primer artículo que escribo para los compañeros de la Tecnicatura e
 
 La idea es ayudar a aquellos que nunca en su vida programaron y pueden necesitar un poco de explicación extra para empezar, la idea de estos artículos va a ser responder la pregunta "¿Que estoy escribiendo?", una pregunta que les puede surgir cuando están escribiendo el código presentado en el material propuesto.
 
-Por ejemplo, en esta unidad se les pueden surgir estas preguntas: ¿Que es "String"? ¿Que son los puntos y comas después de cada linea? ¿ Y los corchetes? etc.
+Por ejemplo, en esta unidad se les pueden surgir estas preguntas: ¿Que es "String"? ¿Que son los puntos y comas después de cada linea? ¿ Y los llaves? etc.
 
 En la Unidad 2 de Elementos de Programación se comenzó con un poco de Java, con el clásico ["Hello World! (Hola Mundo)"](https://es.wikipedia.org/wiki/Hola_mundo) que se encuentre siempre en los instructivos de lenguajes de programación.
 
@@ -230,13 +230,13 @@ El String "Bienvenido " y el String contenido en nuestra variable ***nom***.
 
 Al usar el operador "+" con strings, las concatenamos, por lo tanto, si ***nom*** contiene el valor "Guillermo", el String resultante va a ser "Bienvenido Guillermo".
 
-###¿Y los corchetes?
+###¿Y las llaves?
 
-Los corchetes delimitan **bloques**, todo lo que este entre los corchetes de ***public static void main***, por ejemplo, son expresiones que corresponden a ese método.
+Las llaves delimitan **bloques**, todo lo que este entre los llaves de ***public static void main***, por ejemplo, son expresiones que corresponden a ese método.
 
 Siempre hay que acordarse de delimitar los bloques debidamente.
 Hay mucho mas que decir sobre bloques, pero no me quiero salir de las ramas, ya que esta unidad es solo una pequeña introducción.
 
-Por ahora simplemente sepan que al definir una clase o método, hay que delimitar sus expresiones con corchetes.
+Por ahora simplemente sepan que al definir una clase o método, hay que delimitar sus expresiones con llaves.
 
 ¡Esto es todo por ahora, espero les haya sido útil!
