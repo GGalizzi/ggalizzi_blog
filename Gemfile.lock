@@ -3,19 +3,26 @@ GEM
   specs:
     adsf (1.1.1)
       rack (>= 1.0.0)
+    chunky_png (1.2.8)
     coderay (1.0.9)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
     colored (1.2)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     cri (2.3.0)
       colored (>= 1.2)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fssm (0.2.10)
     json (1.8.0)
     kramdown (1.0.2)
     method_source (0.8.1)
+    mime-types (1.22)
     multi_json (1.7.3)
     nanoc (3.6.3)
       cri (~> 2.3)
@@ -24,6 +31,7 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
+    sass (3.2.9)
     slop (3.4.5)
 
 PLATFORMS
@@ -32,7 +40,10 @@ PLATFORMS
 DEPENDENCIES
   adsf
   coffee-script
+  compass
   json
   kramdown
+  mime-types
   nanoc
   pry
+  sass

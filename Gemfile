@@ -1,8 +1,20 @@
 source 'http://rubygems.org'
 
 gem 'nanoc'
+
+#Coffee script for JavaScript pretty syntax
 gem 'coffee-script'
+
+#Pry for debugging capabilities
 gem 'pry'
+
+#HAML filter
 gem 'kramdown'
-gem 'adsf' #for nanoc view
+
+#For nanoc view
+gem 'adsf'
+
 gem 'json'
+gem 'sass'
+gem 'compass'
+gem 'mime-types'
