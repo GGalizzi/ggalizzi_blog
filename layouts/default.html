@@ -35,7 +35,7 @@
     </div>
     <div id="sidebar">
         <h1><%= link_to( '.G. Galizzi', '/') %></h1>
-        <p id="intro">Blog de Diseño y Programación</p>
+        <p id="intro">Blog de <br> Diseño y Programación</p>
       <h2>Últimos artículos</h2>
       <ul id="sorted_articles">
         <% (@site.sorted_articles[0..4]).each do |post| %>
@@ -83,9 +83,13 @@
     </div>
     <div id="main">
       <% if @item[:kind] == 'article' %>
-      <h2><%= @item[:title] %></h2> 
+        <div class="snippet">
+          <h2><%= @item[:title] %></h2> 
+          <%= yield %>
+        </div>
+      <% else %>
+        <%= yield %>
       <% end %>
-      <%= yield %>
     </div>
     </div>
 

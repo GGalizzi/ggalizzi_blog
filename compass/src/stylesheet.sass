@@ -1,0 +1,155 @@
+@import "compass/reset"
+@import "compass/css3"
+@import "compass/utilities"
+@import "compass/typography"
+@import "compass/layout"
+
+// Vertical Rythm
+$base-font-size: 18px
+$base-line-height: 28px
+
++establish-baseline
+
+// Colors
+$apple-green: #B6DB65
+//#A9CC49
+$pretty-pink: #FF6BA8
+
+$dark-gray: #333
+$light-gray: #999
+
+// Fonts
+=sans
+  font-family: "Merriweather Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif
+
+=serif
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif
+
+=logo-font
+  font-family: baskerville, palatino, "palatino linotype", georgia, serif
+
+=monospace
+  font-family: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
+
+// Base
+
+html
+  background-image: url('/images/ps_neutral.png')
+
+a
+  color: $apple-green
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+p
+  color: $dark-gray
+  margin-bottom: 1.3em
+
+h3
+  +adjust-font-size-to(26px)
+  +single-text-shadow
+  color: $apple-green
+  margin-bottom: 1.1em
+
+pre
+  margin-bottom: 1.2em
+
+#container
+  margin: 0 auto
+  width: 93%
+
+#main
+  +sans
+  width: 80%
+  margin-left: 18%
+  h2
+    +adjust-font-size-to(22px)
+    text-align: center
+
+#sidebar
+  float: left
+  position: fixed
+  left: 2%
+  width: 15%
+  min-width: 120px
+  padding: 1%
+  +adjust-font-size-to(12px)
+  +border-radius(0 0 5px 5px)
+
+  background: $apple-green
+  ul li
+    line-height: 2.2em
+  ul li a
+    display: block
+    color: white
+    +adjust-font-size-to(20px)
+    +single-text-shadow
+    +ellipsis
+    &:before
+      color: $pretty-pink
+      content: '+'
+      padding-right: 2px
+
+  h2
+    +adjust-font-size-to(21px)
+    line-height: 1.6544em
+  #intro
+    color: $pretty-pink
+    text-align: center
+    line-height: 1.42444em
+  h1
+    +logo-font
+    text-transform: uppercase
+    font-weight: bold
+    display: block
+    text-align: center
+    margin: 0 auto
+    width: 80%
+    +adjust-font-size-to(50px)
+    a
+      color: $pretty-pink
+      &:hover
+        text-decoration: none
+
+.snippet
+  position: relative
+  background: #fefefe
+  margin: 2%
+  padding: 2%
+  +border-radius(5px)
+  &:first-of-type
+    margin-top: 0%
+
+  h2
+    //+box-shadow($light-gray 1px 2px 4px 0)
+    +border-radius(2px)
+    display: block
+    position: relative
+    width: 107.5%
+    right: 4%
+    margin-bottom: 2%
+    padding-left: 1%
+    background-color: $apple-green
+    color: white
+    a
+      color: white
+      +single-text-shadow
+
+.fecha
+  color: $light-gray
+  +adjust-font-size-to(12px)
+  text-align: right
+
+.tags
+  color: $light-gray
+  +adjust-font-size-to(12px)
+  border-top: 1px solid $light-gray
+
+.more
+  +adjust-font-size-to(14px)
+  text-align: right
+// Temp
+
+#main_nav
+  display: none

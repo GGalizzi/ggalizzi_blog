@@ -62,8 +62,20 @@ def create_tag_pages
     tag_set(items).each do |tag|
         #tag = tag.split('').map! { |x| x == "ñ" ? "n" : x }.join
         items << Nanoc::Item.new(render('_tag_page', :tag => tag),
-                    {title: 'tags'}, '/tags/'+ tag)
+                    {title: 'tags'}, '/tags/'+ tag +'/')
     end
+end
+
+def tags_for(item, params={})
+  base_url  = params[:base_url]  || 'http://technorati.com/tag/'
+  none_text = params[:none_text] || '(none)'
+  separator = params[:separator] || ', '
+
+  if item[:tags].nil? or item[:tags].empty?
+    none_text
+  else
+    item[:tags].map { |tag| %{<a href="/tags/#{tag}/">#{tag}</a>} }.join(separator)
+  end
 end
 
 def create_archives
