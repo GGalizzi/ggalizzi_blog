@@ -1,6 +1,8 @@
 <% articles = items_with_date_info(month) %>
-<h3>
+<div class="snippet">
+<h2>
     Posts publicados en <%= int_to_month(month.split('/').first) %>
     del <%= month.split('/').last %>
-</h3>
+</h2>
 <%= render('_link_articles', :list => articles) %>
+</div>

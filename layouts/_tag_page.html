@@ -1,9 +1,11 @@
 <% articles = items_with_tag(tag).reverse %>
 
+<div class="snippet">
 <% if tag != "unl" %>
-    <h3>Resultados para el tag '<%= tag %>':</h3>
+    <h2>Resultados para el tag '<%= tag %>':</h2>
     <%= render('_link_articles', :list => articles) %>
 <% else %>
-    <h3>Articulos UNL</h3>
+    <h2>Articulos UNL</h2>
     <%= render('_link_articles', :list => articles) %>
 <% end %>
+</div>

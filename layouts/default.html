@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300' rel='stylesheet' type='text/css'>
     <title>G. Galizzi - <%= @item[:title] %></title>
     <meta name="description" content="Un blog sobre diseño grafico, diseño web, desarrollo web, y todo lo relacionado.">
     <link rel="stylesheet" href="/assets/stylesheets/stylesheet.css">
@@ -12,6 +11,7 @@
     -->
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prettifysheet.css">
 
+    <script src="//use.edgefonts.net/source-sans-pro;miama.js"></script> 
     <!--[if IE]>
       <link href="assets/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
     <![endif]-->
@@ -36,6 +36,11 @@
     <div id="sidebar">
         <h1><%= link_to( '.G. Galizzi', '/') %></h1>
         <p id="intro">Blog de <br> Diseño y Programación</p>
+      <h2>Navegación</h2>
+      <ul id="navi">
+        <li> <%= link_to "Home", '/' %> </li>
+        <li> <%= link_to "UNL",  '/tags/unl/' %> </li>
+      </ul>
       <h2>Últimos artículos</h2>
       <ul id="sorted_articles">
         <% (@site.sorted_articles[0..4]).each do |post| %>
@@ -45,7 +50,7 @@
                 <% if @item.identifier != post.path %>
                     <%= link_to(post[:title], post.path) %>
                 <% else %>
-                    <%= post[:title] %>
+                <div class="current"> <%= post[:title] %> </div>
                 <% end%>
         </li>
         <%end%>
@@ -74,28 +79,32 @@
           <% end %>
           <li>
               <% if @item.identifier != '/archivos/' %>
-              <%= link_to( '&raquo;Todos', '/archivos/') %>
+              <%= link_to( 'Todos', '/archivos/') %>
               <% else %>
               &raquo;Todos
               <% end %>
           </li>
       </ul>
-    </div>
+
+    </div> <!-- #sidebar -->
+
     <div id="main">
       <% if @item[:kind] == 'article' %>
         <div class="snippet">
-          <h2><%= @item[:title] %></h2> 
+          <a class="internal-anchor" name="top"><h2><%= @item[:title] %></h2> </a>
           <%= yield %>
         </div>
+        <div id="to_top"><a href="#top">&uarr;Inicio</a></div>
       <% else %>
         <%= yield %>
       <% end %>
-    </div>
-    </div>
+    </div> <!-- #main -->
+    <div id="container_footer"></div>
+  </div> <!-- #container -->
 
-    <!-- <div id="footer">
+    <div id="footer">
         www.guillegalizzi.com.ar | www.ggalizzi.com.ar &copy; 2013 | <a href="mailto:contacto@guillegalizzi.com.ar">Contacto</a>
-    </div> -->
+    </div>
 
     <script src="/javascript/jquery-1.js">
     </script>

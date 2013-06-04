@@ -9,114 +9,218 @@ $base-font-size: 18px
 $base-line-height: 28px
 
 +establish-baseline
++sticky-footer(24px, "#container", "#container_footer", "#footer")
 
 // Colors
-$apple-green: #B6DB65
-//#A9CC49
-$pretty-pink: #FF6BA8
-
+$primary-color: #FCFBE3
+//#B6DB65
+$secondary-color: #fc4a85
+//#FF6BA8
+$highlight-color: #9484FC
 $dark-gray: #333
 $light-gray: #999
 
+
 // Fonts
 =sans
-  font-family: "Merriweather Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif
+  font-family: source-sans-pro, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif
 
 =serif
   font-family: Georgia, Cambria, "Times New Roman", Times, serif
 
 =logo-font
-  font-family: baskerville, palatino, "palatino linotype", georgia, serif
+  font-family: miama, baskerville, palatino, "palatino linotype", georgia, serif
 
 =monospace
   font-family: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
 
 // Base
 
+=my_borders
+  border: 1px dashed $secondary-color
+  +box-shadow( 0 0 0 6px $primary-color)
+
 html
-  background-image: url('/images/ps_neutral.png')
+  background-image: url('/images/elastoplast.png')
+  color: $dark-gray
+
 
 a
-  color: $apple-green
+  color: $secondary-color
   text-decoration: none
   &:hover
     text-decoration: underline
 
 p
   color: $dark-gray
-  margin-bottom: 1.3em
+  margin-bottom: 0.566em
+
+::selection
+  background-color: $secondary-color
+  color: $highlight-color
+
+::-moz-selection
+  background-color: $secondary-color
+  color: $highlight-color
 
 h3
   +adjust-font-size-to(26px)
   +single-text-shadow
-  color: $apple-green
+  color: $primary-color
   margin-bottom: 1.1em
 
 pre
+  +monospace
+  +adjust-font-size-to(12px)
+  overflow: auto
   margin-bottom: 1.2em
 
+strong
+  font-weight: bold
+
+em
+  font-style: italic
+
+strong>em
+  +monospace
+  +adjust-font-size-to(14px)
+  font-style: normal
+  font-weight: normal
+  border: 1px dashed $light-gray
+  padding: 2px
+
 #container
+  position: relative
   margin: 0 auto
   width: 93%
 
 #main
   +sans
-  width: 80%
+  width: 70%
+  max-width: 800px
   margin-left: 18%
   h2
     +adjust-font-size-to(22px)
     text-align: center
+
+  ul li:before
+    content: '+'
+    color: $secondary-color
+
+
+  ol
+    counter-reset: li
+
+  ol a
+    position: relative
+    display: block
+    padding: .4em .4em .4em 2em
+    *padding: .4em
+    margin: .5em 0
+    border-bottom: 1px solid #ddd
+    color: $primary-color
+    text-decoration: none
+    +border-radius(.3em)
+    transition: all .3s ease-out
+
+  ol a:hover
+    background: #eee
+
+  ol a:hover:before
+    +rotate(360deg)
+
+  ol a:before
+    content: counter(li)
+    counter-increment: li
+    position: absolute
+    left: -1.3em
+    top: 50%
+    margin-top: -1.3em
+    background: $primary-color
+    height: 2em
+    width: 2em
+    line-height: 2em
+    border: .3em solid #fff
+    text-align: center
+    font-weight: bold
+    border-radius: 2em
+    transition: all .3s ease-out
+    color: $highlight-color
+
+#triangle
+  position: absolute
+  top: 520px
+  width: 0
+  height: 0
+
+  border-left: 120px solid transparent
+  border-right: 120px solid transparent
+
+  border-top: 120px solid $primary-color
 
 #sidebar
   float: left
   position: fixed
   left: 2%
   width: 15%
+  height: 100%
   min-width: 120px
+  max-width: 200px
   padding: 1%
+  border-top: none
+  +my_borders
   +adjust-font-size-to(12px)
   +border-radius(0 0 5px 5px)
 
-  background: $apple-green
+
+  background: $primary-color
   ul li
     line-height: 2.2em
   ul li a
     display: block
-    color: white
+    color: $highlight-color
+    border-bottom: 1px dashed $highlight-color
+    margin-bottom: 0.466em
     +adjust-font-size-to(20px)
-    +single-text-shadow
     +ellipsis
     &:before
-      color: $pretty-pink
-      content: '+'
+      color: $secondary-color
+      content: '-'
+      margin-right: 2px
       padding-right: 2px
-
   h2
     +adjust-font-size-to(21px)
     line-height: 1.6544em
   #intro
-    color: $pretty-pink
+    color: $secondary-color
     text-align: center
     line-height: 1.42444em
+    border-top: 2px dashed $highlight-color
+    border-bottom: 2px dashed $highlight-color
   h1
     +logo-font
-    text-transform: uppercase
-    font-weight: bold
     display: block
     text-align: center
     margin: 0 auto
+    margin-bottom: 0.25em
     width: 80%
-    +adjust-font-size-to(50px)
+    font-size: 2.4em
+    line-height: 2em
     a
-      color: $pretty-pink
+      color: $secondary-color
       &:hover
         text-decoration: none
+
+@media all and (min-width: 1300px)
+  #main, #sidebar
+    margin: 0 auto
 
 .snippet
   position: relative
   background: #fefefe
   margin: 2%
-  padding: 2%
+  padding: 1.42%
+  padding-bottom: 0.5%
   +border-radius(5px)
   &:first-of-type
     margin-top: 0%
@@ -126,15 +230,22 @@ pre
     +border-radius(2px)
     display: block
     position: relative
-    width: 107.5%
-    right: 4%
+    width: 104%
+    right: 2.3%
     margin-bottom: 2%
     padding-left: 1%
-    background-color: $apple-green
-    color: white
+    background-color: $primary-color
+    color: $highlight-color
     a
-      color: white
+      color: $highlight-color
       +single-text-shadow
+
+#footer
+  +adjust-font-size-to(14px)
+  background-color: $primary-color
+  text-align: center
+  a
+    color: $highlight-color
 
 .fecha
   color: $light-gray
@@ -149,6 +260,28 @@ pre
 .more
   +adjust-font-size-to(14px)
   text-align: right
+
+.current
+  text-decoration: underline
+  color: $highlight-color
+
+.internal-anchor
+  &:hover
+    text-decoration: none
+
+#to_top
+  +border-radius(.4em 0 .4em 0)
+  +my_borders
+  display: none
+  position: fixed
+  right: 4%
+  top: 88%
+  background-color: $primary-color
+  width: 80px
+  margin: 0 auto
+  text-align: center
+  a
+    color: $highlight-color
 // Temp
 
 #main_nav

@@ -14,6 +14,16 @@ Por ejemplo, en esta unidad se les pueden surgir estas preguntas: ¿Que es "Stri
 
 En la Unidad 2 de Elementos de Programación se comenzó con un poco de Java, con el clásico ["Hello World! (Hola Mundo)"](https://es.wikipedia.org/wiki/Hola_mundo) que se encuentre siempre en los instructivos de lenguajes de programación.
 
+**Indice**
+
+1. [Comentarios](#comentarios)
+2. [Paquetes](#paquetes)
+3. [Librerias](#librerias)
+4. [Clases](#clases)
+5. [Métodos](#metodos)
+6. [Variables](#variables)
+7. [¿Y las llaves?](#llaves)
+
 ¿Que estoy escribiendo?
 -----------------------
 
@@ -44,7 +54,7 @@ Vamos a analizar el código de fuente siguiente, que se encuentra en la página 
         }
     }
 
-###Comentarios
+###<a class="internal-anchor" name="comentarios">Comentarios</a>
 
 Para empezar, el código comienza con un comentario. Los comentarios en Java se pueden escribir de dos maneras:
 
@@ -69,7 +79,7 @@ Para empezar, el código comienza con un comentario. Los comentarios en Java se 
 Los comentarios sirven para documentar nuestro código, explicar la lógica de lo que estamos haciendo, se considera buena practica hacerlo.
 Ya que ayuda a entender el código a otra gente con la que podemos compartirlo, o incluso a nosotros mismos cuando dias o semanas después revisamos código propio y no nos acordamos para que escribimos ciertas cosas.
 
-###Paquetes
+###<a class="internal-anchor" name="paquetes">Paquetes</a>
 
 Luego, vemos ***package u2_ejemplo2;***, la palabra package le indica a java que estamos a punto de definir un paquete, y el nombre de ese paquete es "u2_ejemplo2", un paquete es una manera de agrupar clases por sus funciones o categorías.
 
@@ -77,7 +87,7 @@ Por ahora explicar paquetes en profundidad no serviría ya que hay otras cuestio
 
 Así que sigamos con ***import javax.swing.JOptionPane;***.
 
-###Importación de librerias.
+###<a class="internal-anchor" name="librerias">Importación de librerias.</a>
 
 import, ya esta explicado, simplemente importa otras clases, en este caso estamos importando el objeto ***JOptionPane***, que se encuentra dentro del paquete [***javax.swing***](http://docs.oracle.com/javase/6/docs/api/javax/swing/package-summary.html).
 Este es uno de los tantos objetos que vienen includio en las librerias de JDK.
@@ -93,7 +103,7 @@ Una expresión es una linea de código que es luego interpretada y realiza ciert
 
 ambas son expresiones, la primera es una expresión que inicializa una variable (ocho) y le asigna un valor (8), la segunda inicializa la variable "unl" y le asigna "Universidad Nacional del Litoral".
 
-###Declarando una clase
+###<a class="internal-anchor" name="clases">Declarando una clase</a>
 
 Siguiendo, ***public class Main {*** indica que estamos declarando una nueva **clase**, y esa clase es publica (public), con el nombre Main.
 
@@ -125,7 +135,7 @@ Otras convenciones nombran las variables con guiones bajos para separar palabras
 NO se pueden usar espacios para identificar clase, variables o métodos y de aquí salen estas diferentes convenciones.
 
 
-###Declarando un método
+###<a class="internal-anchor" name="metodos">Declarando un método</a>
 
 Seguimos con ***public static void main(String[] args) {***.
 
@@ -189,7 +199,7 @@ Los argumentos son simplemente variables que toma el método, por ejemplo, en la
 
 El método en la expresión de ***return*** lee este argumento, y asigna a la variable ***nombre*** el valor "Guillermo".
 
-###¿Que es una variable, y que quiere decir lo que se antepone a su nombre?
+###<a class="internal-anchor" name="variables">¿Que es una variable, y que quiere decir lo que se antepone a su nombre?</a>
 
 Claro, acabo de explicar un poco adelantado, así que sigamos con la siguiente linea, donde estamos declarando una variable de la clase String y te explico un poco mas de que va la mano:
 
@@ -230,7 +240,7 @@ El String "Bienvenido " y el String contenido en nuestra variable ***nom***.
 
 Al usar el operador "+" con strings, las concatenamos, por lo tanto, si ***nom*** contiene el valor "Guillermo", el String resultante va a ser "Bienvenido Guillermo".
 
-###¿Y las llaves?
+###<a class="internal-anchor" name="llaves">¿Y las llaves?</a>
 
 Las llaves delimitan **bloques**, todo lo que este entre los llaves de ***public static void main***, por ejemplo, son expresiones que corresponden a ese método.
 
