@@ -5,18 +5,30 @@
 @import "compass/layout"
 
 // Vertical Rythm
-$base-font-size: 18px
-$base-line-height: 28px
+$base-font-size: 21px
+$base-line-height: 31px
 
 +establish-baseline
 +sticky-footer(24px, "#container", "#container_footer", "#footer")
 
 // Colors
-$primary-color: #FCFBE3
-//#B6DB65
-$secondary-color: #fc4a85
-//#FF6BA8
-$highlight-color: #9484FC
+
+//Scheme 1
+$primary-color: #F4F1EA
+$secondary-color: #A8C689
+$dark-color: #24373d
+
+//Scheme 2
+$primary-color: #ecf0f1
+$secondary-color: #e67e22
+$background-color: #22C3E6
+//#16a085
+$dark-color: darken(#007E99, 12%)
+//#2c3e50
+
+//Constants
+$highlight-color: #007E99
+//#16a085
 $dark-gray: #333
 $light-gray: #999
 
@@ -36,24 +48,24 @@ $light-gray: #999
 
 // Base
 
-=my_borders
-  border: 1px dashed $secondary-color
-  +box-shadow( 0 0 0 6px $primary-color)
+*
+  +box-sizing(border-box)
 
-html
-  background-image: url('/images/elastoplast.png')
-  color: $dark-gray
-
+body
+  background-color: $background-color
 
 a
-  color: $secondary-color
+  color: $highlight-color
   text-decoration: none
   &:hover
     text-decoration: underline
 
 p
-  color: $dark-gray
+  +sans
+  color: $dark-color
   margin-bottom: 0.566em
+  padding-left: .6em
+  padding-right: .6em
 
 ::selection
   background-color: $secondary-color
@@ -72,6 +84,7 @@ h3
 pre
   +monospace
   +adjust-font-size-to(12px)
+  background-color: lighten($primary-color, 5%)
   overflow: auto
   margin-bottom: 1.2em
 
@@ -89,199 +102,237 @@ strong>em
   border: 1px dashed $light-gray
   padding: 2px
 
+// Header
+header
+  padding: .3em 0em 0em .3em
+  background-color: $dark-color
+  a
+    h1
+      background: url('/images/header.png') $dark-color no-repeat
+      width: 100%
+      height: 79px
+      span
+        display: none
+
+//Container
 #container
   position: relative
+  width: 82%
+  //62%
   margin: 0 auto
-  width: 93%
+  //background-color: $primary-color
+  //border: solid darken($primary-color, 23%)
+  border-width: 0px 4px 0px 4px
+  
+#menu
+  //+transition-property(all)
+  //+transition-duration(2s)
+  //+transition-timing-function(ease-in)
+  +sans
+  +adjust-font-size-to(12px)
+  background-color: $dark-color
+  width: 100%
+  margin: 0 auto
+  margin-right: .5em
+  color: $primary-color
+  text-align: center
+  z-index: 3
+  cursor: pointer
+  li
+    position: relative
+    margin-right: 1em
+    padding: .55em
+    display: inline-block
+    text-align: center
+    &:hover
+      background-color: $primary-color
+      color: $dark-color
+      border-left: 3px $highlight-color solid
+
+ul#menu ul 
+  visibility: hidden
+  position: absolute
+  left: -3px
+  top: 100%
+  ul
+    top: 0
+    left: 99%
+  li
+    border-left: 3px solid $highlight-color
+    display: block
+    color: $highlight-color
+    width: 180%
+    background-color: $primary-color
+    a
+      color: $dark-color
+      &:hover
+        color: $primary-color
+    &:hover
+      background-color: $highlight-color
+      border-left-color: $secondary-color
+      a
+        color: $primary-color
+      +border-radius(0px)
+
+ul#menu li:hover > ul
+  visibility: visible
 
 #main
-  +sans
-  width: 70%
-  max-width: 800px
-  margin-left: 18%
+  //border: solid darken($primary-color, 23%)
+  background-color: $primary-color
+  border-width: 0px 4px 0px 4px
+  margin: 0 auto
+  margin-left: 22%
   h2
-    +adjust-font-size-to(22px)
-    text-align: center
-
-  ul li:before
-    content: '+'
-    color: $secondary-color
-
-
-  ol
-    counter-reset: li
-
-  ol a
-    position: relative
-    display: block
-    padding: .4em .4em .4em 2em
-    *padding: .4em
-    margin: .5em 0
-    border-bottom: 1px solid #ddd
-    color: $primary-color
-    text-decoration: none
-    +border-radius(.3em)
-    transition: all .3s ease-out
-
-  ol a:hover
-    background: #eee
-
-  ol a:hover:before
-    +rotate(360deg)
-
-  ol a:before
-    content: counter(li)
-    counter-increment: li
-    position: absolute
-    left: -1.3em
-    top: 50%
-    margin-top: -1.3em
-    background: $primary-color
-    height: 2em
-    width: 2em
-    line-height: 2em
-    border: .3em solid #fff
-    text-align: center
+    +adjust-font-size-to(24px)
+    text-indent: .5em
+    width: 100%
     font-weight: bold
-    border-radius: 2em
-    transition: all .3s ease-out
-    color: $highlight-color
+    font-variant: small-caps
+    background-color: $highlight-color
+    color: $primary-color
+    //border: solid $secondary-color
+    border-width: 1px 0px 1px 0px
 
-#triangle
-  position: absolute
-  top: 520px
-  width: 0
-  height: 0
-
-  border-left: 120px solid transparent
-  border-right: 120px solid transparent
-
-  border-top: 120px solid $primary-color
-
-#sidebar
-  float: left
-  position: fixed
-  left: 2%
-  width: 15%
-  height: 100%
-  min-width: 120px
-  max-width: 200px
-  padding: 1%
-  border-top: none
-  +my_borders
-  +adjust-font-size-to(12px)
-  +border-radius(0 0 5px 5px)
-
-
-  background: $primary-color
-  ul li
-    line-height: 2.2em
-  ul li a
-    display: block
-    color: $highlight-color
-    border-bottom: 1px dashed $highlight-color
-    margin-bottom: 0.466em
-    +adjust-font-size-to(20px)
-    +ellipsis
-    &:before
-      color: $secondary-color
-      content: '-'
-      margin-right: 2px
-      padding-right: 2px
-  h2
-    +adjust-font-size-to(21px)
-    line-height: 1.6544em
-  #intro
-    color: $secondary-color
-    text-align: center
-    line-height: 1.42444em
-    border-top: 2px dashed $highlight-color
-    border-bottom: 2px dashed $highlight-color
-  h1
-    +logo-font
-    display: block
-    text-align: center
-    margin: 0 auto
-    margin-bottom: 0.25em
-    width: 80%
-    font-size: 2.4em
-    line-height: 2em
     a
-      color: $secondary-color
-      &:hover
-        text-decoration: none
+      color: $primary-color
+      margin-bottom: .25em
+      padding-bottom: .15em
+      +sans
+  a h2
+    color: $primary-color
 
-@media all and (min-width: 1300px)
-  #main, #sidebar
-    margin: 0 auto
+#main>.snippet:first-child
+  padding-top: .5em
+  margin-top: 0em
+
+#tagged
+  +sans
+  float: left
+  position: relative
+  width: 22%
+  height: 100%
+  padding-top: .799em
+  padding-left: .8em
+  padding-right: .8em
+  +adjust-font-size-to(12px)
+  background-color: $dark-color
+  color: $dark-color
+  &:hover li
+    +opacity(1)
+  li
+    +transition-property(all)
+    +transition-timing-function(ease-in-out)
+    +transition-duration(1s)
+    text-transform: lowercase
+    border-left: 10px solid $secondary-color
+    position: relative
+    padding-left: .3em
+    margin-bottom: .4em
+    line-height: 1.8em
+    +opacity(0.9)
+    background-color: $primary-color
+    &:first-child
+      +opacity(1)
+      text-transform: none
+      border-left: 0
+      color: $primary-color
+      font-weight: bold
+      background-color: inherit
+    .index
+      text-indent: -9999px
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      overflow: hidden
+      background-color: desaturate($secondary-color,35%)
+      width: 30%
+      //+border-radius(0 10px 10px 0)
+      +opacity(0.6)
+      +transition-property(all)
+      +transition-timing-function(ease-in-out)
+      +transition-duration(1s)
+      z-index: 1
+    &:hover
+      +opacity(1)
+      .index
+        +opacity(1)
+        background-color: $secondary-color
+    a
+      display: block
+      position: relative
+      z-index: 2
+      color: $dark-color
+      text-decoration: none
+      +transition-property(all)
+      +transition-timing-function(linear)
+      +transition-duration(.5s)
+      &:hover
+        color: $primary-color
+
+    .count
+      color: $dark-color
+      display: block
+      position: absolute
+      top: 0
+      right: 3px
+      text-align: right
+      z-index: 2
 
 .snippet
-  position: relative
-  background: #fefefe
-  margin: 2%
-  padding: 1.42%
-  padding-bottom: 0.5%
-  +border-radius(5px)
-  &:first-of-type
-    margin-top: 0%
+  margin: 10px
 
-  h2
-    //+box-shadow($light-gray 1px 2px 4px 0)
-    +border-radius(2px)
-    display: block
-    position: relative
-    width: 104%
-    right: 2.3%
-    margin-bottom: 2%
-    padding-left: 1%
-    background-color: $primary-color
-    color: $highlight-color
-    a
-      color: $highlight-color
-      +single-text-shadow
-
-#footer
-  +adjust-font-size-to(14px)
-  background-color: $primary-color
-  text-align: center
-  a
-    color: $highlight-color
+.even
+  background-color: darken(adjust-color($primary-color, $red: 1), 3%)
 
 .fecha
-  color: $light-gray
-  +adjust-font-size-to(12px)
+  +serif
+  +adjust-font-size-to(9px)
+  color: $dark-gray
+  text-transform: uppercase
   text-align: right
-
-.tags
-  color: $light-gray
-  +adjust-font-size-to(12px)
-  border-top: 1px solid $light-gray
+  padding-right: .8em
 
 .more
-  +adjust-font-size-to(14px)
-  text-align: right
+  +sans
+  +adjust-font-size-to(12px)
+  float: right
+  background-color: $secondary-color
+  font-weight: bold
+  text-align: center
+  padding: 0 .3em 0 .3em
+  //padding-right: .8em
+  a
+    color: $primary-color
+.tags
+  +sans
+  color: $dark-gray
+  font-weight: bold
+  padding-bottom: .8em
+  padding-left: 1.188em
+  +adjust-font-size-to(12px)
+  a
+    margin: .5em
+    padding: .5em
+    color: $primary-color
+    background-color: $dark-color
+    &:hover
+      text-decoration: none
+      background-color: $highlight-color
 
-.current
-  text-decoration: underline
-  color: $highlight-color
-
-.internal-anchor
-  &:hover
-    text-decoration: none
-
-#to_top
-  +border-radius(.4em 0 .4em 0)
-  +my_borders
-  display: none
-  position: fixed
-  right: 4%
-  top: 88%
-  background-color: $primary-color
-  width: 80px
+#footer
+  display: block
+  position: relative
+  left: 8%
   margin: 0 auto
   text-align: center
+  width: 50%
+  +adjust-font-size-to(12px)
+  color: $primary-color
   a
-    color: $highlight-color
+    color: $dark-color
+
 // Temp
 
 #main_nav

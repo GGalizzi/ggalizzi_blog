@@ -21,42 +21,32 @@
   </head>
   <body>
     <div id="container">
-    <!-- <div id="aboutbar">
-        <h1>G.Galizzi</h1>
-        <p>Mis notas, referencias y cualquier otra cosa sobre Diseño, Desarrollo web y otros intereses.</p>
-    </div> -->
-    <div id="main_nav">
-        <strong>Navegación</strong>
-        <ul>
-            <li><%= link_to('Home', '/') %></li>
-            <li><%= link_to('UNL', '/tags/unl/') %></li>
-            <li>About</li>
+    <header>
+      <a href="/"><h1><span>G. Galizzi</span></h1></a>
+    <ul id="menu">
+      <li>Navegación
+        <ul id="navi">
+          <li> <%= link_to "Home", '/' %> </li>
+          <li> <%= link_to "UNL",  '/tags/unl/' %> </li>
         </ul>
-    </div>
-    <div id="sidebar">
-        <h1><%= link_to( '.G. Galizzi', '/') %></h1>
-        <p id="intro">Blog de <br> Diseño y Programación</p>
-      <h2>Navegación</h2>
-      <ul id="navi">
-        <li> <%= link_to "Home", '/' %> </li>
-        <li> <%= link_to "UNL",  '/tags/unl/' %> </li>
-      </ul>
-      <h2>Últimos artículos</h2>
-      <ul id="sorted_articles">
-        <% (@site.sorted_articles[0..4]).each do |post| %>
+      </li>
+      <li>Últimos artículos
+        <ul id="sorted_articles">
+          <% (@site.sorted_articles[0..4]).each do |post| %>
 
-        <% if not post[:tags].include?("unl") %>
-        <li>
-                <% if @item.identifier != post.path %>
-                    <%= link_to(post[:title], post.path) %>
-                <% else %>
-                <div class="current"> <%= post[:title] %> </div>
-                <% end%>
-        </li>
-        <%end%>
-        <% end %>
-      </ul>
-      <h2>Archivos</h2>
+          <% if not post[:tags].include?("unl") %>
+          <li>
+                  <% if @item.identifier != post.path %>
+                      <%= link_to(post[:title], post.path) %>
+                  <% else %>
+                  <div class="current"> <%= post[:title] %> </div>
+                  <% end%>
+          </li>
+          <%end%>
+          <% end %>
+        </ul>
+      </li>
+      <li>Archivos
       <ul id="archivos">
           <% year_set[0..1].each do |year| %>
           <li>
@@ -85,8 +75,20 @@
               <% end %>
           </li>
       </ul>
+      </li>
 
-    </div> <!-- #sidebar -->
+    </ul> <!-- #menu -->
+
+    </header>
+
+    <div id="tagged">
+      <ul>
+        <li>Temas mas populares:</li>
+        <li><a href="#">Ruby</a><span class="count">30</span><span class="index" style="width: 80%">(30%)</span></li>
+        <li><a href="#">Web Design</a><span class="count">20</span><span class="index" style="width: 55%">(30%)</span></li>
+        <li><a href="#">Python</a><span class="count">10</span><span class="index">(30%)</span></li>
+      </ul>
+    </div> <!-- #tagged -->
 
     <div id="main">
       <% if @item[:kind] == 'article' %>
@@ -108,6 +110,7 @@
 
     <script src="/javascript/jquery-1.js">
     </script>
+    <script src="/javascript/jquery_sticky.js"></script>
     <script src="/javascript/google-code-prettify/prettify.js">
     </script>
     <script src="/javascript/application.js">

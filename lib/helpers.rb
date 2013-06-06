@@ -69,7 +69,7 @@ end
 def tags_for(item, params={})
   base_url  = params[:base_url]  || 'http://technorati.com/tag/'
   none_text = params[:none_text] || '(none)'
-  separator = params[:separator] || ', '
+  separator = params[:separator] || '  '
 
   if item[:tags].nil? or item[:tags].empty?
     none_text
@@ -85,7 +85,7 @@ def create_archives
 end
 
 def snippet
-    self.compiled_content.split("<?snippet?>")[0]<< " [...]" + "<br />"
+    self.compiled_content.split("<?snippet?>")[0]<< "<br />"
 end
 
 def add_class
